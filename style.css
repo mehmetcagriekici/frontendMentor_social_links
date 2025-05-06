@@ -1,0 +1,226 @@
+/*font family*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/*variables*/
+:root {
+  /*theme*/
+  --color-green: hsl(75, 94%, 57%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey-700: hsl(0, 0%, 20%);
+  --color-grey-800: hsl(0, 0%, 12%);
+  --color-grey-900: hsl(0, 0%, 8%);
+
+  /*sizes*/
+  --container-height: 34rem;
+  --container-width: 20rem;
+  --avatar-width: 7rem;
+
+  /*font sizes*/
+  --font-md: 1.4rem;
+  --font-sm: 1rem;
+  --font-xs: 0.85rem;
+
+  /*paddings*/
+  --container-padding: 2rem;
+  --list-item-padding: 0.8rem;
+
+  /*gaps*/
+  --container-gap: 1.6rem;
+  --information-gap: 1.6rem;
+  --text-gap: 0.6rem;
+  --list-gap: 0.8rem;
+
+  /*border radiuses*/
+  --container-radius: 0.8rem;
+  --avatar-radius: 50rem;
+  --list-item-radius: 0.6rem;
+}
+
+/*default styles*/
+html,
+body,
+*,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /*1rem = 10px*/
+  font-size: 62.5%;
+
+  /*default font family*/
+  font-family: "Inter", sans-serif;
+
+  overflow: hidden;
+}
+
+main {
+  height: 100dvh;
+  width: 100dvw;
+
+  /*center everything in flow, one container*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-grey-900);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+p {
+  font-size: var(--font-md);
+}
+
+/*utility classes*/
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*container*/
+.container {
+  /*size*/
+  height: var(--container-height);
+  width: var(--container-width);
+
+  /*display (flex-center), flex col*/
+  gap: var(--container-gap);
+
+  /*padding*/
+  padding: var(--container-padding);
+
+  /*background color*/
+  background-color: var(--color-grey-800);
+
+  /*border*/
+  border-radius: var(--container-radius);
+}
+
+/*information*/
+.information {
+  /*display (flex-center)*/
+  gap: var(--information-gap);
+}
+
+/*avatar container*/
+.avatar {
+  /*size, height auto calculated*/
+  max-width: var(--avatar-width);
+  height: auto;
+
+  /*border*/
+  border-radius: var(--avatar-radius);
+}
+
+/*information text conainer*/
+.text {
+  /*display (flex-center)*/
+  gap: var(--text-gap);
+}
+
+.name p {
+  color: var(--color-white);
+}
+
+.address p {
+  color: var(--color-green);
+  font-size: var(--font-sm);
+}
+
+/*divider*/
+.divider p {
+  color: var(--color-white);
+  font-size: var(--font-xs);
+}
+
+/*list*/
+.links {
+  /*size*/
+  width: 100%;
+  height: auto;
+
+  /*display (flex-center)*/
+  gap: var(--list-gap);
+}
+
+/*list items*/
+.links li {
+  /*size*/
+  width: 100%;
+
+  /*padding*/
+  padding: var(--list-item-padding);
+
+  /*background*/
+  background-color: var(--color-grey-700);
+
+  /*typography*/
+  color: var(--color-white);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+
+  /*border*/
+  border-radius: var(--list-item-radius);
+
+  cursor: pointer;
+}
+
+.links li:hover {
+  background-color: var(--color-green);
+  color: var(--color-grey-900);
+}
+
+/*footer*/
+.attribution {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  color: var(--color-white);
+}
+
+/*media queries*/
+@media (width > 375px) {
+  /*increase the size*/
+  :root {
+    /*sizes*/
+    --container-height: 50rem;
+    --container-width: 30rem;
+    --avatar-width: 8rem;
+
+    /*font sizes*/
+    --font-md: 1.8rem;
+    --font-sm: 1.6rem;
+    --font-xs: 1rem;
+
+    /*paddings*/
+    --container-padding: 3rem;
+    --list-item-padding: 1rem;
+
+    /*gaps*/
+    --container-gap: 2rem;
+    --information-gap: 1.8rem;
+    --text-gap: 1rem;
+    --list-gap: 1.2rem;
+
+    /*border radiuses*/
+    --container-radius: 1rem;
+    --avatar-radius: 50rem;
+    --list-item-radius: 0.8rem;
+  }
+}
